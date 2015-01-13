@@ -34,6 +34,9 @@ body.modal-open {
       top: 0;
       right: 0; }
 
+html, body {
+  height: 100%; }
+
 body {
   font: 100% "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
 
@@ -50,12 +53,18 @@ a.presentation {
   padding: 20px;
   margin: 30px; }
 
+.main-content {
+  min-height: 100%;
+  height: auto;
+  margin-bottom: -50px; }
+  .main-content:after {
+    content: '';
+    height: 50px;
+    display: block; }
+
 .footer {
-  position: absolute;
-  bottom: 0;
   height: 50px;
   background-color: #f4f4f4;
-  margin-top: 50px;
   border-top: 1px solid #ddd;
   padding-top: 10px; }
 

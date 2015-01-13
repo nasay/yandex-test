@@ -1,6 +1,10 @@
 @import "extends";
 @import "modal";
 
+html, body {
+    height: 100%;
+}
+
 body {
     font: 100% "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
@@ -29,12 +33,23 @@ a {
     }
 }
 
+$footer-height: 50px;
+
+.main-content {
+    min-height: 100%;
+    height: auto;
+    margin-bottom: -$footer-height;
+
+    &:after {
+        content: '';
+        height: $footer-height; 
+        display: block;
+    }
+}
+
 .footer {
-    position: absolute;
-    bottom: 0;
-    height: 50px;
+    height: $footer-height;
     background-color: #f4f4f4;
-    margin-top: 50px;
     border-top: 1px solid #ddd;
     padding-top: 10px;
 }
@@ -77,7 +92,6 @@ a {
     height: 100%;
     text-align: center; 
     border: 1px #555 solid;
-
     transition: left 400;
 
     &:before {
