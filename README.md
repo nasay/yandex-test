@@ -6,4 +6,4 @@
 python -m SimpleHTTPServer
 ```
 
-Информация хранится в папке *json*
+Данные хранятся в папке *json*
