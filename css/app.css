@@ -1,0 +1,106 @@
+.modal-wrapper .modal .close, button, a.presentation {
+  transition: opacity 200; }
+  .modal-wrapper .modal .close:hover:not(:disabled), button:hover:not(:disabled), a.presentation:hover:not(:disabled) {
+    opacity: 0.8; }
+
+body.modal-open {
+  overflow-y: hidden; }
+
+.modal-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center; }
+  .modal-wrapper:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle; }
+  .modal-wrapper .modal {
+    width: 90%;
+    height: 90%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    background-color: #fff;
+    position: relative; }
+    .modal-wrapper .modal .close {
+      vertical-align: top;
+      margin: 10px;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0; }
+
+body {
+  font: 100% "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
+
+.rotate-180 {
+  transform: rotate(180deg); }
+
+.text-right {
+  text-align: right; }
+
+a.presentation {
+  border: 1px solid #ddd;
+  background-color: #eee;
+  display: inline-block;
+  padding: 20px;
+  margin: 30px; }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  background-color: #f4f4f4;
+  margin-top: 50px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px; }
+
+.presentation-container {
+  width: 100%; }
+
+.navigation-panel {
+  padding-top: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: height 300; }
+  .navigation-panel.hidden {
+    height: 10px; }
+
+.slides-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 5vmin;
+  overflow: hidden; }
+  .slides-wrapper.no-cursor {
+    cursor: none; }
+
+.slide {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border: 1px #555 solid;
+  transition: left 400; }
+  .slide:before {
+    content: '';
+    height: 100%;
+    vertical-align: middle;
+    display: inline-block; }
+  .slide.previous {
+    left: -100%; }
+  .slide.next {
+    left: 100%; }
+  .slide .content {
+    vertical-align: middle;
+    display: inline-block;
+    width: 70%; }

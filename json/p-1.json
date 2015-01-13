@@ -1,0 +1,22 @@
+{ 
+     "result": {
+          "id": "p-1",
+          "name": "Presentation 1", 
+          "slides": [
+              { 
+                  "content": "<h1>Buffalo</h1><p>Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo.</p><p>A grammatical sentence in American English, used as an example of how homonyms and homophones can be used to create complicated linguistic constructs.</p>", 
+                  "style": "slide-1"
+              },
+              { 
+                  "content": "Slide 2", 
+                  "style": "slide-2"
+              },
+
+              { 
+                  "content": "Slide 3", 
+                  "style": "slide-3"
+              }
+          ]
+     }
+}
+

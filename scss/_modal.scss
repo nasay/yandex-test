@@ -1,0 +1,43 @@
+body {
+    &.modal-open {
+        overflow-y: hidden;
+    }
+}
+
+.modal-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    .modal {
+        width: 90%;
+        height: 90%;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: left;
+        background-color: #fff;
+        position: relative;
+
+        .close {
+            @extend %hover;
+
+            vertical-align: top;
+            margin: 10px;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+    
+}

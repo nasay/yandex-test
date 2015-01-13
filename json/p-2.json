@@ -1,0 +1,21 @@
+{
+    "result": {
+         "id": "p-2",
+         "name": "Presentation 2",
+         "slides": [
+             { 
+                 "content": "Cats are amazing!", 
+                 "style": "slide-4"
+             },
+             { 
+                 "content": "Cats are smart and beautiful", 
+                 "style": "slide-5"
+             },
+
+             { 
+                 "content": "Future depends on cats!", 
+                 "style": "slide-6"
+             }
+         ]
+    }
+}

@@ -1,0 +1,7 @@
+%hover {
+    transition: opacity 200;
+
+    &:hover:not(:disabled) {
+        opacity: 0.8;
+    }
+}
