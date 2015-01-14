@@ -1,3 +1,4 @@
+// Стиль слайдов презентаций.
 @for $i from 1 through 6 {
     .slide-#{$i} {
          background-color: rgba(50 + 20 * $i, 15 * $i, 25 + 30 * $i, 0.1 + $i * 0.1);
