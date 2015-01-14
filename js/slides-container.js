@@ -11,7 +11,7 @@
 
     // Таймаут, после которого скрываются панель навигации и курсор в
     // полноэкранном режиме.
-    Container.prototype.hidingTimeout = 2000;
+    Container.prototype.hidingTimeout = 3000;
 
     // Кеширование ui элементов, которые используются часто.
     Container.prototype.bindUIElements = function () {
@@ -40,7 +40,6 @@
         this.$nextButton.on('click', this.showNextSlide.bind(this));
         this.$previousButton.on('click', this.showPreviousSlide.bind(this));
         this.$fullscreenButton.on('click', this.toggleFullScreen.bind(this));
-
     };
 
     // Предотвращает всплытие событий.
@@ -156,7 +155,7 @@
             this.$panel.on('mouseover.fullscreen', this.showPanel.bind(this));
             this.$panel.on('mouseout.fullscreen', this.setPanelHidingTimeout.bind(this));
 
-            this.setPanelHidingTimeout();
+        //    this.setPanelHidingTimeout();
         } else {
             // Отображение курсора и панели.
             this.showPanel();
@@ -177,9 +176,9 @@
     };
 
     // Навигация при помощи клавиатуры: стрелочки для перехода между слайдами и
-    // полноэкранный режим на ENTER.
+    // полноэкранный режим на F2.
     Container.prototype.onKey = function (event) {
-        if (event.keyCode === 13) {
+        if (event.keyCode === 113) {
             this.toggleFullScreen();
         } else if (event.keyCode === 39) {
             this.showNextSlide();
