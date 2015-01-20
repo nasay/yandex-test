@@ -3,7 +3,7 @@
   .modal-wrapper .modal .close:hover:not(:disabled), button:hover:not(:disabled), a.presentation:hover:not(:disabled) {
     opacity: 0.8; }
 
-body.modal-open {
+body.no-scroll {
   overflow-y: hidden; }
 
 .modal-wrapper {
@@ -32,7 +32,8 @@ body.modal-open {
       cursor: pointer;
       position: absolute;
       top: 0;
-      right: 0; }
+      right: 0;
+      z-index: 10; }
 
 html, body {
   height: 100%; }

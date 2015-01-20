@@ -5,6 +5,8 @@
         // Индекс текущего слайда.
         this.currentIndex = 0;
 
+        this.$element = $($('#presentation-container-template').html());
+
         this.bindUIElements();
         this.bindEvents();
     };
@@ -16,35 +18,21 @@
     // Кеширование ui элементов, которые используются часто.
     Container.prototype.bindUIElements = function () {
         this.$document = $(document);
-        this.$wrapper = $('#modal-wrapper');
-        this.$el = this.$wrapper.find('#modal');
 
-        this.$panel = this.$el.find('#navigation-panel');
-        this.$slidesWrapper = this.$el.find('#slides-wrapper');
-        this.$nextButton = this.$el.find('#next-button');
-        this.$previousButton = this.$el.find('#previous-button');
-        this.$fullscreenButton = this.$el.find('#fullscreen-button');
+
+        this.$panel = $('#navigation-panel', this.$element);
+        this.$slidesWrapper = $('#slides-wrapper', this.$element);
+        this.$nextButton = $('#next-button', this.$element);
+        this.$previousButton = $('#previous-button', this.$element);
+        this.$fullscreenButton = $('#fullscreen-button', this.$element);
     };
 
     // Привязывает события.
+    // Навигация чз кнопки панели.
     Container.prototype.bindEvents = function () {
-        // События модального окна.
-        var close = this.close.bind(this);
-
-        this.$el.on('click', this.stopPropogation);
-        this.$el.on('click', '#close', close);
-        this.$wrapper.on('click', close);
-
-
-        // Навигация чз кнопки панели.
         this.$nextButton.on('click', this.showNextSlide.bind(this));
         this.$previousButton.on('click', this.showPreviousSlide.bind(this));
         this.$fullscreenButton.on('click', this.toggleFullScreen.bind(this));
-    };
-
-    // Предотвращает всплытие событий.
-    Container.prototype.stopPropogation = function (event) {
-        event.stopPropagation();
     };
 
    // Отображает слайды, переданные в аргументе, в модальном окне.
@@ -77,7 +65,6 @@
 
         this.$slidesWrapper.append(fragment);
 
-
         // В начале кнопка "назад" должна быть недоступной.
         this.$previousButton.prop('disabled', true);
 
@@ -86,10 +73,7 @@
             this.$nextButton.prop('disabled', true);
         }
 
-        this.$wrapper.removeClass('hide');
-
-        // Запрет скроллинга, когда модальное окно открыто.
-        $('body').addClass('modal-open');
+        modal.show(this);
 
         // События при показе презентации.
         this.$document.on('keydown.shown', this.onKey.bind(this));
@@ -107,6 +91,8 @@
     // При этомкурсор тоже скрывается.
     Container.prototype.setPanelHidingTimeout = function () {
         var self = this;
+
+        this.clearPanelTimeout();
 
         this.panelTimeoutID = window.setTimeout(function () {
             self.$panel.addClass('hidden');
@@ -155,15 +141,16 @@
             this.$panel.on('mouseover.fullscreen', this.showPanel.bind(this));
             this.$panel.on('mouseout.fullscreen', this.setPanelHidingTimeout.bind(this));
 
-        //    this.setPanelHidingTimeout();
+            this.setPanelHidingTimeout();
         } else {
+            this.$panel.off('.fullscreen');
+
             // Отображение курсора и панели.
             this.showPanel();
             this.toggleCursor(false);
 
             // Убирает полноэкранные события
             this.$slidesWrapper.off('.fullscreen');
-            this.$panel.off('.fullscreen');
         }
     };
 
@@ -236,22 +223,14 @@
     };
 
     // Закрывает модальное окно.
-    Container.prototype.close = function () {
-        // разблокировать скроллинг
-        $('body').removeClass('modal-open');
-
-        // скрыть модальное окно
-        this.$wrapper.addClass('hide');
-
+    Container.prototype.onClose = function () {
         // разблокировать кнопку "вперед"
         if (this.currentIndex === this.$slides.length - 1) {
             this.$nextButton.prop('disabled', false);
         }
 
         // удалить слайды
-        this.$slidesWrapper.empty();
-        this.$slides = null;
-        this.currentIndex = 0;
+        this.$element.remove();
 
         // отписаться от событий, работающих при показе презентации
         this.$document.off('.shown');

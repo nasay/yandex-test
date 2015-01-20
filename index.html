@@ -24,28 +24,32 @@
     </div>
 
     <div class="modal-wrapper hide" id="modal-wrapper">
-        <div class="modal" id="modal">
-            <div class="presentation-container" id="presentation-container">
-                <div class="slides-wrapper" id="slides-wrapper"></div>
-    
-                <div class="row navigation-panel" id="navigation-panel">
-                    <div class="columns small-6 large-4">
-                        <button id="previous-button"><div class="rotate-180 flaticon-next15"></div></button>
-                        <button id="next-button"><div class="flaticon-next15"></div></button>
-                    </div>
-                    <div class="columns small-6 large-4 text-right">
-                        <button id="fullscreen-button" title="Switch fullscreen
-                            mode (F2)"><i class="flaticon-square48"></i></button>
-                    </div>
-                </div>
-            </div>
+        <div class="modal" id="modal-content">
             <i class="flaticon-cross37 close" id="close"></i>
         </div>
-    </div> 
+    </div>
+
+    <script type="text/html" id="presentation-container-template">
+        <div class="presentation-container" id="presentation-container">
+            <div class="slides-wrapper" id="slides-wrapper"></div>
+    
+            <div class="row navigation-panel" id="navigation-panel">
+                <div class="columns small-6 large-4">
+                    <button id="previous-button"><div class="rotate-180 flaticon-next15"></div></button>
+                    <button id="next-button"><div class="flaticon-next15"></div></button>
+                </div>
+                <div class="columns small-6 large-4 text-right">
+                    <button id="fullscreen-button" title="Switch fullscreen
+                        mode (F2)"><i class="flaticon-square48"></i></button>
+                </div>
+            </div>
+        </div>
+    </script>
 
     <script src="js/libs/jquery.min.js"></script>
     <script src="js/slides-container.js"></script>
     <script src="js/list.js"></script>
+    <script src="js/modal.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

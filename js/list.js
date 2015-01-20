@@ -5,7 +5,6 @@
     var List = function (presentations) {
         this.presentations = presentations;
         this.$el = $('#presentations-list');
-        this.container = new Container;
     };
 
     // Отображает презентации.
@@ -18,7 +17,8 @@
         // Открывает презентацию.
         var onClick = function () {
             $.getJSON('json/' + this.dataset.id + '.json', function (data) {
-                self.container.show(data.result.slides);
+                var container = new Container;
+                container.show(data.result.slides);
             });
         };
 
