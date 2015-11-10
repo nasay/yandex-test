@@ -1,12 +1,14 @@
 (function () {
     'use strict';
 
+    // Used for showing list of presentations
     // Исопользуется для отображения списка презентаций.
     var List = function (presentations) {
         this.presentations = presentations;
         this.$el = $('#presentations-list');
     };
 
+    // Show list of presentations
     // Отображает презентации.
     List.prototype.render = function () {
         var self = this;
@@ -14,6 +16,7 @@
         var $link;
         var fragment = document.createDocumentFragment();
 
+        // Open the presentation
         // Открывает презентацию.
         var onClick = function () {
             $.getJSON('json/' + this.dataset.id + '.json', function (data) {
