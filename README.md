@@ -1,22 +1,26 @@
-## Сервер ##
-В корневой директории запустить любой сервер, например:
+## Server ##
+You should run any server from the project root directory. I used
 
 ```
 #!bash
 python -m SimpleHTTPServer
 ```
-Данные хранятся в папке *json*.
 
-## Поддерживаемые браузеры ##
-Проверялись Chrome 39, Firefox 34.
+All data is stored in */json* directory.
 
-## Реализованная функциональность ##
-* Просмотр списка презентаций, приходящего с сервера;
-* Просмотр выбранной презентации в модальном окне;
-* Отображение полноэкранного режима.
+## Browser support ##
+I carefully checked it only for Chrome 39, Firefox 34, but it looks like for modern Chrome and Firefox it is working too.
 
-## Что можно было бы еще сделать ##
-* В модальном окне добавить кнопки для перемещения между презентациями;
-* При просмотре презентации добавить управление, с помощью которого можно перейти на слайд с любым номером (например, скролл);
-* Для каждой презентации получать с сервера  css файл со стилями (сейчас все это хранится в файле style.css);
-* Реализовать ленивую подгрузку презентаций.
+## Realised functionality ##
+
+* Displaying presentation list fetched from server;
+* Displaying selected presentation in modal window;
+* Fullscreen mode;
+* For navigation you can also use keyboard: left and right arrows and F2 for fullscreen mode. 
+
+## What would be great to do ##
+* Add buttons in modal window for switching between presentations. 
+* Add slides navigation (for example, some scroll);
+* Fetching styles should depend on the presentation which is displayed (right now they are all in styles.css);
+* Lazy presentation fetching;
+* ?.
