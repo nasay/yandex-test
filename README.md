@@ -13,14 +13,14 @@ I carefully checked it only for Chrome 39, Firefox 34, but it looks like for mod
 
 ## Realised functionality ##
 
-* Displaying presentation list fetched from server;
+* Displaying presentation list which is fetched from server;
 * Displaying selected presentation in modal window;
 * Fullscreen mode;
-* For navigation you can also use keyboard: left and right arrows and F2 for fullscreen mode. 
+* For navigation you can also use a keyboard: left and right arrows and F2 for fullscreen mode. 
 
 ## What would be great to do ##
-* Add buttons in modal window for switching between presentations. 
-* Add slides navigation (for example, some scroll);
+* Add buttons in the modal window for switching between presentations. 
+* Add slides navigation while presentation is displaying (for example, some scroll);
 * Fetching styles should depend on the presentation which is displayed (right now they are all in styles.css);
 * Lazy presentation fetching;
 * ?.
