@@ -1,3 +1,8 @@
+##Task##
+* make an application for displaying presentations;
+* think about displaying several presentations within one page;
+* using jQuery is highly recommended.
+
 ## Server ##
 You should run any server from the project root directory. I used
 
