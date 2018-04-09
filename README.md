@@ -1,10 +1,10 @@
-##Task##
+## Task ##
 * make an application for displaying presentations;
 * think about displaying several presentations within one page;
-* using jQuery is highly recommended.
+* jQuery is highly recommended.
 
 ## Server ##
-You should run any server from the project root directory. I used
+You need to run a server from the project root directory. I used
 
 ```
 #!bash
@@ -18,14 +18,14 @@ I carefully checked it only for Chrome 39, Firefox 34, but it looks like for mod
 
 ## Realised functionality ##
 
-* Displaying presentation list which is fetched from server;
-* Displaying selected presentation in modal window;
+* Display presentation list which is fetched from the server;
+* Display selected presentation in a modal window;
 * Fullscreen mode;
-* For navigation you can also use a keyboard: left and right arrows and F2 for fullscreen mode. 
+* For navigation you can use a keyboard: left and right arrows and F2 for the fullscreen mode. 
 
 ## What would be great to do ##
 * Add buttons in the modal window for switching between presentations; 
-* Add slides navigation while presentation is displaying (for example, some scroll);
-* Fetching styles should depend on the presentation which is displayed (right now they are all in styles.css);
+* Add slide navigation while presentation is displaying (for example, some scroll);
+* Fetching of styles should depend on the presentation which is displayed (right now all styles are stored in ```styles.css```);
 * Lazy presentation fetching;
-* ?.
+* ? :).
