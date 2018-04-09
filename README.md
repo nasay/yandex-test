@@ -4,10 +4,9 @@
 * jQuery is highly recommended.
 
 ## Server ##
-You need to run a server from the project root directory. I used
+You need to run a server from the project root directory. I run the following command from my terminal:
 
 ```
-#!bash
 python -m SimpleHTTPServer
 ```
 
